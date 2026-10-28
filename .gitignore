@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.*
+
+# Claude Code 개인 설정
+.claude/settings.local.json
+
+# Superpowers 작업 파일 (brainstorming 비주얼 컴패니언, SDD 워크스페이스)
+.superpowers/

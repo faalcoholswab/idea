@@ -1,0 +1,28 @@
+name: 아이디어
+description: 새 아이디어를 기록합니다. 본문이나 댓글에 @claude 를 쓰면 Claude 가 구체화를 돕습니다.
+title: "[아이디어] "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 문제 / 기회
+      description: 무엇이 불편했나요? 어떤 기회를 봤나요?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 아이디어
+      description: 떠오른 해결책이나 만들고 싶은 것
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: 누구를 위한 것인가요?
+  - type: textarea
+    id: notes
+    attributes:
+      label: 참고 / 메모
+      description: 링크, 비슷한 서비스, 제약 조건 등

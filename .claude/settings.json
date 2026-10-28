@@ -1,5 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": false,
+    "frontend-design@claude-plugins-official": false,
+    "andrej-karpathy-skills@karpathy-skills": false
+  },
   "env": {
     "SUPERPOWERS_DISABLE_TELEMETRY": "1"
   },

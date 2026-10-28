@@ -61,6 +61,23 @@ Claude Code 의 플러그인(`enabledPlugins`)은 **클라우드 세션(claude.a
 그다음 **New issue → 아이디어** 로 기록하고, 본문이나 댓글에 `@claude 이 아이디어 구체화해줘` 라고 쓰면 된다.
 쓰기 권한이 있는 사용자만 호출할 수 있다.
 
+### 내 컴퓨터의 모든 프로젝트에 적용
+
+이 저장소 밖에서도 쓰려면 터미널(macOS·Linux·Windows 공통)에서 한 번 실행한다. 공식 플러그인이라 자동으로 업데이트된다.
+
+```bash
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
+claude plugin install frontend-design@claude-plugins-official
+claude plugin install andrej-karpathy-skills --marketplace forrestchang/andrej-karpathy-skills
+```
+
+- 첫 줄은 공식 마켓플레이스가 이미 등록돼 있으면 생략해도 된다.
+- 열려 있는 세션에는 `/reload-plugins` 를 실행하거나 새 세션부터 적용된다.
+- 이 저장소 안에서는 `.claude/settings.json` 이 위 플러그인을 꺼서, 저장소에 들어 있는 같은 스킬과 중복되지 않게 한다.
+- 이 플러그인은 클라우드 세션(claude.ai/code)에서는 로드되지 않는다. 클라우드에서는 이 저장소의 스킬이 쓰인다.
+- 되돌리기: `claude plugin uninstall <이름>@<마켓플레이스>`
+
 ## 관리
 
 - **스킬 갱신**: `scripts/sync-skills.sh` 의 커밋 SHA 를 바꾸고 실행 → `git diff` 로 변경 확인 → `THIRD_PARTY_NOTICES.md` 의 커밋도 갱신
@@ -73,7 +90,7 @@ Claude Code 의 플러그인(`enabledPlugins`)은 **클라우드 세션(claude.a
 ```
 CLAUDE.md                     항상 적용되는 작업 규칙 + Karpathy 가이드라인
 .claude/
-  settings.json               SessionStart 훅, .env 읽기 금지, 텔레메트리 끔
+  settings.json               SessionStart 훅, .env 읽기 금지, 텔레메트리 끔, 전역 플러그인 중복 방지
   hooks/session-start.sh      using-superpowers 주입
   skills/                     외부에서 들여온 스킬 15종 (직접 수정하지 않음)
 .github/

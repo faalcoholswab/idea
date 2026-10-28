@@ -72,6 +72,9 @@ claude plugin install frontend-design@claude-plugins-official
 claude plugin install andrej-karpathy-skills --marketplace forrestchang/andrej-karpathy-skills
 ```
 
+- `claude` 를 알 수 없는 명령어라고 하면 Claude Code(CLI)가 아직 설치되지 않은 것이다. 먼저 설치한 뒤 터미널을 새로 연다.
+  Windows PowerShell: `irm https://claude.ai/install.ps1 | iex` / macOS·Linux: `curl -fsSL https://claude.ai/install.sh | bash`
+- 터미널 없이 하려면: Claude 데스크톱 앱의 Code 로컬 세션에서 입력창 옆 **+** → **Add plugins** 로 `superpowers`, `frontend-design` 를 설치한다.
 - 첫 줄은 공식 마켓플레이스가 이미 등록돼 있으면 생략해도 된다.
 - 열려 있는 세션에는 `/reload-plugins` 를 실행하거나 새 세션부터 적용된다.
 - 이 저장소 안에서는 `.claude/settings.json` 이 위 플러그인을 꺼서, 저장소에 들어 있는 같은 스킬과 중복되지 않게 한다.
